@@ -69,7 +69,7 @@ namespace LoL_Config
 
 		private void updateDumpBox(string[] readText)	// Open League of Legends game.cfg file (C:\Riot Games\League of Legends\Config\game.cfg)
 		{
-			txt_dump.Text = "Updated game.cfg" +"\n" + "------------------------------------------------------------";
+			txt_dump.Text = "Updated game.cfg" +"\n" + "----------------------------------------";
 			foreach (string s in readText)
 			{
 				txt_dump.AppendText(s + "\n");
