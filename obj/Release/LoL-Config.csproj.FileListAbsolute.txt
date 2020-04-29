@@ -1,0 +1,14 @@
+C:\Projects\LoL-Config\LoL-Config\bin\Release\LoL-Config.exe.config
+C:\Projects\LoL-Config\LoL-Config\bin\Release\LoL-Config.exe
+C:\Projects\LoL-Config\LoL-Config\bin\Release\LoL-Config.pdb
+C:\Projects\LoL-Config\LoL-Config\obj\Release\MainWindow.g.cs
+C:\Projects\LoL-Config\LoL-Config\obj\Release\App.g.cs
+C:\Projects\LoL-Config\LoL-Config\obj\Release\LoL-Config_MarkupCompile.cache
+C:\Projects\LoL-Config\LoL-Config\obj\Release\LoL-Config_MarkupCompile.lref
+C:\Projects\LoL-Config\LoL-Config\obj\Release\MainWindow.baml
+C:\Projects\LoL-Config\LoL-Config\obj\Release\LoL-Config.g.resources
+C:\Projects\LoL-Config\LoL-Config\obj\Release\LoL_Config.Properties.Resources.resources
+C:\Projects\LoL-Config\LoL-Config\obj\Release\LoL-Config.csproj.GenerateResource.cache
+C:\Projects\LoL-Config\LoL-Config\obj\Release\LoL-Config.csproj.CoreCompileInputs.cache
+C:\Projects\LoL-Config\LoL-Config\obj\Release\LoL-Config.exe
+C:\Projects\LoL-Config\LoL-Config\obj\Release\LoL-Config.pdb

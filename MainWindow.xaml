@@ -5,59 +5,99 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoL_Config"
         mc:Ignorable="d"
-        Title="LoL-Config" Height="874.5" Width="1095.334" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
-	<Grid Margin="0,0,0,0">
-		<GroupBox Header="Video" HorizontalAlignment="Left" Height="120" Margin="10,10,0,0" VerticalAlignment="Top" Width="350">
-			<Grid HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="487" Margin="10,10,0,0">
+        Title="LoL-Config" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" Height="735" Width="655">
+	<Grid Margin="0,0,-29,-18">
+		<GroupBox x:Name="grp_video" Header="Video" HorizontalAlignment="Left" Height="120" Margin="10,10,0,0" VerticalAlignment="Top" Width="350">
+			<Grid x:Name="grp_video1" HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="330" Margin="10,10,-2,-5">
 				<TextBlock x:Name="tb_resoultion" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Resolution" VerticalAlignment="Top" Height="16" Width="56"/>
-				<ComboBox x:Name="cbo_resolution" HorizontalAlignment="Left" Margin="0,21,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
-				<CheckBox x:Name="chk_hideEyeCandy" Content="Hide eye candy" Margin="0,68,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" Height="15" HorizontalAlignment="Left"/>
-				<CheckBox x:Name="chk_colorblindMode" Content="Colorblind Mode" Margin="0,48,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" Height="15" HorizontalAlignment="Left"/>
-				<ComboBox x:Name="cbo_windowedMode" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Margin="175,21,0,0" SelectionChanged="cbo_windowedMode_SelectionChanged" Height="22">
-					<ComboBoxItem Content="Full Screen" IsSelected="True"/>
+				<ComboBox x:Name="cbo_resolution" HorizontalAlignment="Left" Margin="0,21,0,0" VerticalAlignment="Top" Width="140" Height="22" SelectionChanged="cbo_resolution_SelectionChanged">
+					<ComboBoxItem Content="Test" HorizontalAlignment="Left" Width="138"/>
+				</ComboBox>
+				<CheckBox x:Name="chk_colorblindMode" Content="Colorblind Mode" Margin="0,48,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" Height="15" HorizontalAlignment="Left" Click="chk_colorblindMode_Click"/>
+				<CheckBox x:Name="chk_hideEyeCandy" Content="Hide eye candy" Margin="0,68,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" Height="15" HorizontalAlignment="Left" Click="chk_hideEyeCandy_Click"/>
+				<TextBlock x:Name="tb_windowedMode" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Windowed Mode" VerticalAlignment="Top" Margin="175,0,0,0" Height="16" Width="92"/>
+				<ComboBox x:Name="cbo_windowedMode" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Margin="175,21,0,0" SelectionChanged="cbo_windowedMode_SelectionChanged" Height="22">
+					<ComboBoxItem Content="Full Screen"/>
 					<ComboBoxItem Content="Windowed"/>
 					<ComboBoxItem Content="Borderless"/>
 				</ComboBox>
-				<CheckBox x:Name="chk_useRelativeTeamColors" Content="Use relative team colors" HorizontalAlignment="Left" Margin="175,48,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" IsChecked="True" Height="15" Width="146"/>
-				<CheckBox x:Name="chk_enableScreenShake" Content="Enable screen shake" HorizontalAlignment="Left" Margin="175,68,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" IsChecked="True" Height="15" Width="126"/>
-				<TextBlock x:Name="tb_windowedMode" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Windowed Mode" VerticalAlignment="Top" Margin="175,0,0,0" Height="16" Width="92"/>
+				<CheckBox x:Name="chk_useRelativeTeamColors" Content="Use relative team colors" HorizontalAlignment="Left" Margin="175,48,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" Height="15" Width="146" Click="chk_useRelativeTeamColors_Click"/>
+				<CheckBox x:Name="chk_enableScreenShake" Content="Enable screen shake" HorizontalAlignment="Left" Margin="175,68,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" Height="15" Width="126" Click="chk_enableScreenShake_Click"/>
 			</Grid>
 		</GroupBox>
-		<GroupBox Header="Graphics" HorizontalAlignment="Left" Height="150" Margin="10,145,0,0" VerticalAlignment="Top" Width="350">
-			<Grid HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="298" Margin="10,10,0,0">
-				<TextBlock x:Name="lb_characterQuality" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Character Quality" VerticalAlignment="Top"/>
-				<ComboBox x:Name="cbo_characterQuality" HorizontalAlignment="Left" Margin="0,21,0,0" VerticalAlignment="Top" Width="120"/>
-				<ComboBox HorizontalAlignment="Left" Margin="0,69,0,0" VerticalAlignment="Top" Width="120"/>
-				<ComboBox HorizontalAlignment="Left" Margin="175,21,0,0" VerticalAlignment="Top" Width="120"/>
-				<CheckBox Content="Character Inking" HorizontalAlignment="Left" Margin="0,96,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" IsChecked="True"/>
-				<ComboBox HorizontalAlignment="Left" Margin="175,69,0,0" VerticalAlignment="Top" Width="120"/>
-				<TextBlock HorizontalAlignment="Left" Margin="0,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Effect Quality"/>
-				<TextBlock HorizontalAlignment="Left" Margin="175,0,0,0" TextWrapping="Wrap" Text="Environment Quality" VerticalAlignment="Top"/>
-				<TextBlock HorizontalAlignment="Left" Margin="175,48,0,0" TextWrapping="Wrap" Text="Shadows" VerticalAlignment="Top"/>
+		<GroupBox x:Name="grp_graphics" Header="Graphics" HorizontalAlignment="Left" Height="150" Margin="10,145,0,0" VerticalAlignment="Top" Width="350">
+			<Grid x:Name="grp_graphics1" HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="330" Margin="10,10,-2,0">
+				<TextBlock x:Name="tb_characterQuality" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Character Quality" VerticalAlignment="Top"/>
+				<ComboBox x:Name="cbo_characterQuality" HorizontalAlignment="Left" Margin="0,21,0,0" VerticalAlignment="Top" Width="140" SelectionChanged="cbo_characterQuality_SelectionChanged">
+					<ComboBoxItem Content="Very Low" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="Low" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="Medium" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="High" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="Very High" HorizontalAlignment="Left" Width="138"/>
+				</ComboBox>
+				<ComboBox x:Name="cbo_effectsQuality" HorizontalAlignment="Left" Margin="0,69,0,0" VerticalAlignment="Top" Width="140">
+					<ComboBoxItem Content="Very Low" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="Low" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="Medium" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="High" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="Very High" HorizontalAlignment="Left" Width="138"/>
+				</ComboBox>
+				<ComboBox x:Name="cbo_envrionmentQuality" HorizontalAlignment="Left" Margin="175,21,0,0" VerticalAlignment="Top" Width="140">
+					<ComboBoxItem Content="Very Low" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="Low" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="Medium" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="High" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="Very High" HorizontalAlignment="Left" Width="138"/>
+				</ComboBox>
+				<CheckBox x:Name="chk_characterInking" Content="Character Inking" HorizontalAlignment="Left" Margin="0,96,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" Click="chk_characterInking_Click"/>
+				<ComboBox x:Name="cbo_shadows" HorizontalAlignment="Left" Margin="175,69,0,0" VerticalAlignment="Top" Width="140" SelectionChanged="cbo_shadows_SelectionChanged">
+					<ComboBoxItem Content="Off" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="Low" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="Medium" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="High" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="Very High" HorizontalAlignment="Left" Width="138"/>
+				</ComboBox>
+				<TextBlock x:Name="tb_effectQuality" HorizontalAlignment="Left" Margin="0,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Effect Quality"/>
+				<TextBlock x:Name="tb_environmentQuality" HorizontalAlignment="Left" Margin="175,0,0,0" TextWrapping="Wrap" Text="Environment Quality" VerticalAlignment="Top"/>
+				<TextBlock x:Name="tb_shadows" HorizontalAlignment="Left" Margin="175,48,0,0" TextWrapping="Wrap" Text="Shadows" VerticalAlignment="Top"/>
 			</Grid>
 		</GroupBox>
-		<GroupBox Header="Advanced" HorizontalAlignment="Left" Height="118" Margin="123,424,0,0" VerticalAlignment="Top" Width="516"/>
-		<Button x:Name="btn_save" Content="Save" HorizontalAlignment="Left" Margin="870,693,0,0" VerticalAlignment="Top" Width="198" Click="btn_save_Click"/>
-		<TextBox x:Name="txt_dump" HorizontalAlignment="Left" Height="573" Margin="870,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198"/>
-		<Label Content="Frame Rate Cap" HorizontalAlignment="Left" Margin="133,446,0,0" VerticalAlignment="Top"/>
-		<ComboBox HorizontalAlignment="Left" Margin="235,450,0,0" VerticalAlignment="Top" Width="120"/>
-		<CheckBox Content="Anti-Aliasing" HorizontalAlignment="Left" Margin="141,476,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" IsChecked="True"/>
-		<CheckBox Content="Wait for Vertical Sync" HorizontalAlignment="Left" Margin="141,502,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight"/>
-		<GroupBox Header="Accessibility" HorizontalAlignment="Left" Height="260" Margin="123,548,0,0" VerticalAlignment="Top" Width="516">
-			<Grid Margin="0,0,158,4">
-				<Slider x:Name="sli_colorLevel" HorizontalAlignment="Left" Margin="11,26,0,0" VerticalAlignment="Top" Width="200" Maximum="100" TickPlacement="BottomRight" TickFrequency="10" IsSnapToTickEnabled="True" Value="50"/>
-				<Label Content="Color Level" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top"/>
-				<TextBox x:Name="txt_colorLevel" HorizontalAlignment="Left" Height="23" Margin="216,26,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sli_colorLevel, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-				<Label Content="Color Gamma" HorizontalAlignment="Left" Margin="6,57,0,0" VerticalAlignment="Top"/>
-				<Slider x:Name="sli_colorGamma" HorizontalAlignment="Left" Margin="11,88,0,0" VerticalAlignment="Top" Width="200" Maximum="100" TickPlacement="BottomRight" TickFrequency="10" IsSnapToTickEnabled="True" Value="50"/>
-				<TextBox x:Name="txt_colorGamma" HorizontalAlignment="Left" Height="23" Margin="216,88,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sli_colorGamma, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-				<Label Content="Color Brightness" HorizontalAlignment="Left" Margin="5,111,0,0" VerticalAlignment="Top"/>
-				<Slider x:Name="sli_colorBrightness" HorizontalAlignment="Left" Margin="11,142,0,0" VerticalAlignment="Top" Width="200" Maximum="100" TickPlacement="BottomRight" TickFrequency="10" IsSnapToTickEnabled="True" Value="50"/>
-				<TextBox x:Name="txt_colorBrightness" HorizontalAlignment="Left" Height="23" Margin="216,142,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sli_colorBrightness, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-				<Label Content="Color Contrast" HorizontalAlignment="Left" Margin="0,171,0,0" VerticalAlignment="Top"/>
-				<Slider x:Name="sli_colorContrast" HorizontalAlignment="Left" Margin="5,202,0,0" VerticalAlignment="Top" Width="200" Maximum="100" TickPlacement="BottomRight" TickFrequency="10" IsSnapToTickEnabled="True" Value="50"/>
-				<TextBox x:Name="txt_coloContrast" HorizontalAlignment="Left" Height="23" Margin="216,202,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sli_colorContrast, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+		<GroupBox x:Name="grp_advanced" Header="Advanced" HorizontalAlignment="Left" Height="120" Margin="10,310,0,0" VerticalAlignment="Top" Width="350">
+			<Grid x:Name="grp_advanced1" Margin="10,10,10,0">
+				<ComboBox x:Name="cbo_frameRateCap" HorizontalAlignment="Left" Margin="0,21,0,0" VerticalAlignment="Top" Width="140" SelectionChanged="cbo_frameRateCap_SelectionChanged">
+					<ComboBoxItem Content="25 FPS" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="30 FPS" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="60 FPS" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="80 FPS" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="120 FPS" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="144 FPS" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="200 FPS" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="240 FPS" HorizontalAlignment="Left" Width="138"/>
+					<ComboBoxItem Content="Uncapped" HorizontalAlignment="Left" Width="138"/>
+				</ComboBox>
+				<CheckBox x:Name="chk_antiAliasing" Content="Anti-Aliasing" HorizontalAlignment="Left" Margin="0,48,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" Click="chk_antiAliasing_Click"/>
+				<CheckBox x:Name="chk_waitForVerticalSync" Content="Wait for Vertical Sync" HorizontalAlignment="Left" Margin="0,68,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" Click="chk_waitForVerticalSync_Click"/>
+				<TextBlock x:Name="tb_frameRateCap" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Text="Frame Rate Cap"/>
 			</Grid>
 		</GroupBox>
+		<GroupBox x:Name="grp_accessibility" Header="Accessibility" HorizontalAlignment="Left" Height="235" Margin="10,445,0,0" VerticalAlignment="Top" Width="350">
+			<Grid x:Name="grp_accessibility1" Margin="10,10,-2,1">
+				<Slider x:Name="sli_colorLevel" HorizontalAlignment="Left" Margin="0,21,0,0" VerticalAlignment="Top" Width="275" Maximum="100" TickPlacement="BottomRight" TickFrequency="10" IsSnapToTickEnabled="True" Value="50" ValueChanged="sli_colorLevel_ValueChanged"/>
+				<TextBox x:Name="txt_colorLevel" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="23" Margin="290,21,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sli_colorLevel, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="23" TextAlignment="Center"/>
+				<Slider x:Name="sli_colorGamma" HorizontalAlignment="Left" Margin="0,71,0,0" VerticalAlignment="Top" Width="275" Maximum="100" TickPlacement="BottomRight" TickFrequency="10" IsSnapToTickEnabled="True" Value="50" ValueChanged="sli_colorGamma_ValueChanged"/>
+				<TextBox x:Name="txt_colorGamma" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="23" Margin="290,71,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sli_colorGamma, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="23" TextAlignment="Center"/>
+				<Slider x:Name="sli_colorBrightness" HorizontalAlignment="Left" Margin="0,121,0,0" VerticalAlignment="Top" Width="275" Maximum="100" TickPlacement="BottomRight" TickFrequency="10" IsSnapToTickEnabled="True" Value="50" ValueChanged="sli_colorBrightness_ValueChanged"/>
+				<TextBox x:Name="txt_colorBrightness" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="23" Margin="290,121,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sli_colorBrightness, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="23" TextAlignment="Center"/>
+				<Slider x:Name="sli_colorContrast" HorizontalAlignment="Left" Margin="0,171,0,0" VerticalAlignment="Top" Width="275" Maximum="100" TickPlacement="BottomRight" TickFrequency="10" IsSnapToTickEnabled="True" Value="50" ValueChanged="sli_colorContrast_ValueChanged"/>
+				<TextBox x:Name="txt_coloContrast" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="23" Margin="290,171,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sli_colorContrast, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="23" TextAlignment="Center"/>
+				<TextBlock x:Name="tb_colorLevel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Color Level" VerticalAlignment="Top"/>
+				<TextBlock x:Name="tb_colorGamma" HorizontalAlignment="Left" Margin="0,50,0,0" TextWrapping="Wrap" Text="Color Gamma" VerticalAlignment="Top"/>
+				<TextBlock x:Name="tb_colorBrightness" HorizontalAlignment="Left" Margin="0,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Color Brightness"/>
+				<TextBlock x:Name="tb_colorContrast" HorizontalAlignment="Left" Margin="0,150,0,0" TextWrapping="Wrap" Text="Color Contrast" VerticalAlignment="Top"/>
+			</Grid>
+		</GroupBox>
+		<TextBox x:Name="txt_dump" HorizontalAlignment="Left" Height="590" Margin="375,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" BorderBrush="LightGray"/>
+		<Button x:Name="btn_save" Content="Save" HorizontalAlignment="Left" Margin="375,659,0,0" VerticalAlignment="Top" Width="250" Click="btn_save_Click" BorderBrush="LightGray" Background="LightGreen"/>
+		<Button x:Name="btn_restoreBackup" Content="Restore Backup" HorizontalAlignment="Left" Margin="375,20,0,0" VerticalAlignment="Top" Width="250" BorderBrush="LightGray" Background="LightPink" Click="btn_restoreBackup_Click"/>
 	</Grid>
 </Window>
