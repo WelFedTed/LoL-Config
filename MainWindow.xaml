@@ -34,14 +34,14 @@
 					<ComboBoxItem Content="High" HorizontalAlignment="Left" Width="138"/>
 					<ComboBoxItem Content="Very High" HorizontalAlignment="Left" Width="138"/>
 				</ComboBox>
-				<ComboBox x:Name="cbo_effectsQuality" HorizontalAlignment="Left" Margin="0,69,0,0" VerticalAlignment="Top" Width="140">
+				<ComboBox x:Name="cbo_effectsQuality" HorizontalAlignment="Left" Margin="0,69,0,0" VerticalAlignment="Top" Width="140" SelectionChanged="cbo_effectsQuality_SelectionChanged">
 					<ComboBoxItem Content="Very Low" HorizontalAlignment="Left" Width="138"/>
 					<ComboBoxItem Content="Low" HorizontalAlignment="Left" Width="138"/>
 					<ComboBoxItem Content="Medium" HorizontalAlignment="Left" Width="138"/>
 					<ComboBoxItem Content="High" HorizontalAlignment="Left" Width="138"/>
 					<ComboBoxItem Content="Very High" HorizontalAlignment="Left" Width="138"/>
 				</ComboBox>
-				<ComboBox x:Name="cbo_envrionmentQuality" HorizontalAlignment="Left" Margin="175,21,0,0" VerticalAlignment="Top" Width="140">
+				<ComboBox x:Name="cbo_envrionmentQuality" HorizontalAlignment="Left" Margin="175,21,0,0" VerticalAlignment="Top" Width="140" SelectionChanged="cbo_envrionmentQuality_SelectionChanged">
 					<ComboBoxItem Content="Very Low" HorizontalAlignment="Left" Width="138"/>
 					<ComboBoxItem Content="Low" HorizontalAlignment="Left" Width="138"/>
 					<ComboBoxItem Content="Medium" HorizontalAlignment="Left" Width="138"/>

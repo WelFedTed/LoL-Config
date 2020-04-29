@@ -310,15 +310,25 @@ namespace LoL_Config
 			updateSettings("CharacterQuality", cbo_characterQuality.SelectedIndex);
 		}
 
-		private void cbo_shadows_SelectionChanged(object sender, SelectionChangedEventArgs e)					// 'Shadows' changed
+		private void cbo_effectsQuality_SelectionChanged(object sender, SelectionChangedEventArgs e)			// 'Effect Quality' change
 		{
-			updateSettings("ShadowsEnabled", 1);
-			updateSettings("ShadowQuality", cbo_shadows.SelectedIndex);
+			updateSettings("EffectsQuality", cbo_effectsQuality.SelectedIndex);
 		}
 
 		private void chk_characterInking_Click(object sender, RoutedEventArgs e)								// 'Character Inking' changed
 		{
 			updateSettings("CharacterInking", Convert.ToInt32(chk_characterInking.IsChecked));
+		}
+
+		private void cbo_envrionmentQuality_SelectionChanged(object sender, SelectionChangedEventArgs e)		// 'Environment Quality' change
+		{
+			updateSettings("EnvironmentQuality", cbo_envrionmentQuality.SelectedIndex);
+		}
+
+		private void cbo_shadows_SelectionChanged(object sender, SelectionChangedEventArgs e)					// 'Shadows' changed
+		{
+			updateSettings("ShadowsEnabled", 1);
+			updateSettings("ShadowQuality", cbo_shadows.SelectedIndex);
 		}
 
 		private void cbo_frameRateCap_SelectionChanged(object sender, SelectionChangedEventArgs e)				// 'Frame Rate Cap' changed
