@@ -60,6 +60,7 @@ namespace LoL_Config
 
 			InitializeComponent(); // Moved to after loading configContents to avoid null references from ui elements
 			configContents = File.ReadAllLines(configFile); // re-read file contents to fix settings being overwritten by component initialization
+			getResolutions();
 
 			if (backup)
 			{
@@ -98,6 +99,17 @@ namespace LoL_Config
 			 *	FrameCapType=10			Uncapped
 			 *	----------------------------------------
 			*/
+		}
+
+		private void getResolutions()																			// Create list of possible resolutions
+		{
+			// extrapolate possible resolutions from current resolution
+			double currentWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+			double currentHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+			Debug.WriteLine("CURRENT SCREEN WIDTH: " + currentWidth);
+			Debug.WriteLine("CURRENT SCREEN HEIGHT: " + currentHeight);
+			cbo_resolution.Items.Add(currentWidth + " x " + currentHeight);
+			// make array of resolutions and use current res as a cut off point for available choices
 		}
 
 		private void loadSettings()																				// Update ui with current settings
