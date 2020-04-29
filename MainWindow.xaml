@@ -10,9 +10,8 @@
 		<GroupBox x:Name="grp_video" Header="Video" HorizontalAlignment="Left" Height="120" Margin="10,10,0,0" VerticalAlignment="Top" Width="350">
 			<Grid x:Name="grp_video1" HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="330" Margin="10,10,-2,-5">
 				<TextBlock x:Name="tb_resoultion" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Resolution" VerticalAlignment="Top" Height="16" Width="56"/>
-				<ComboBox x:Name="cbo_resolution" HorizontalAlignment="Left" Margin="0,21,0,0" VerticalAlignment="Top" Width="140" Height="22" SelectionChanged="cbo_resolution_SelectionChanged">
-					<ComboBoxItem Content="Test" HorizontalAlignment="Left" Width="138"/>
-				</ComboBox>
+                <ComboBox x:Name="cbo_resolution" HorizontalAlignment="Left" Margin="0,21,0,0" VerticalAlignment="Top" Width="140" Height="22" SelectionChanged="cbo_resolution_SelectionChanged">
+                </ComboBox>
 				<CheckBox x:Name="chk_colorblindMode" Content="Colorblind Mode" Margin="0,48,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" Height="15" HorizontalAlignment="Left" Click="chk_colorblindMode_Click"/>
 				<CheckBox x:Name="chk_hideEyeCandy" Content="Hide eye candy" Margin="0,68,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" Height="15" HorizontalAlignment="Left" Click="chk_hideEyeCandy_Click"/>
 				<TextBlock x:Name="tb_windowedMode" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Windowed Mode" VerticalAlignment="Top" Margin="175,0,0,0" Height="16" Width="92"/>
