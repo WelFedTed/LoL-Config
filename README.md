@@ -1,6 +1,9 @@
 # LoL-Config
  Utility to edit League of Legends in-game graphics/video settings while not in-game.
 
-Download latest version: [Lol-Config 0.1.3](https://github.com/WelFedTed/LoL-Config/releases/download/0.1.3/LoL-Config.exe)
+Download latest version: [Lol-Config 0.1.4](https://github.com/WelFedTed/LoL-Config/releases/download/0.1.4/LoL-Config.exe)
 
 ![screenshot of version 0.1.2](screenshot_0.1.2.png)
+
+Icon Source
+[PNGBarn.com](https://www.pngbarn.com/png-image-bbujm)
