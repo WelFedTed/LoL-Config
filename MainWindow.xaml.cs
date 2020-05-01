@@ -101,31 +101,111 @@ namespace LoL_Config
 			*/
 		}
 
-		private void getResolutions()																			// Create list of possible resolutions
+		private void getResolutions()                                                                           // Create list of resolutions
 		{
-			// extrapolate possible resolutions from current resolution
+			int[,] resolutions = new int[,] // array of resolutions
+			{
+				{ 7680, 4320 }, // 16:9		4320p Wide
+				{ 7680, 2160 }, // 32:9		2160p Super Ultra Wide
+				{ 5120, 2880 }, // 16:9
+				{ 5120, 2160 }, // 21:9		2160p Ultra Wide
+				{ 5120, 1440 }, // 32:9		1440p Super Ultra Wide
+				{ 3840, 2160 }, // 16:9		2160p Wide
+				{ 3840, 1080 }, // 32:9		1080p Super Ultra Wide
+				{ 3440, 1440 }, // 21:9		1440p Ultra Wide
+				{ 2560, 1700 }, //  3:2
+				{ 2560, 1600 }, // 16:10
+				{ 2560, 1440 }, // 16:9		1440p Wide
+				{ 2560, 1080 }, // 21:9		1080p Ultra Wide
+				{ 2160, 1440 }, //  3:2
+				{ 2048, 1536 }, //  4:3
+				{ 1920, 1440 }, //  4:3		1440p Standard
+				{ 1920, 1200 }, // 16:10
+				{ 1920, 1080 }, // 16:9		1080p Wide
+				{ 1856, 1392 }, //  4:3
+				{ 1680, 1050 }, // 16:10
+				{ 1600, 1200 }, //  4:3
+				{ 1600, 1024 },
+				{ 1600,  900 }, // 16:9
+				{ 1440, 1080 }, //  4:3		1080p Standard
+				{ 1440,  900 }, // 16:10
+				{ 1400, 1050 }, //  4:3
+				{ 1366,  768 }, // 16:9
+				{ 1360,  768 },
+				{ 1280, 1024 }, //  5:4
+				{ 1280,  960 }, //  4:3
+				{ 1280,  800 }, // 16:10
+				{ 1280,  768 },
+				{ 1280,  720 }, // 16:9		720p Wide
+				{ 1152,  864 }, //  4:3
+				{ 1152,  648 }, // 16:9
+				{ 1024,  768 }, //  4:3
+				{ 1024,  576 }, // 16:9
+				{  960,  720 }, //  4:3		720p Standard
+				{  854,  480 }, // 16:9		480p Wide
+				{  800,  600 }, //  4:3
+				{  720,  576 }, //  4:3
+				{  640,  480 }  //  4:3		480p Standard
+			};
+
+			// assume current resolution is native resultion of display
 			double currentWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
 			double currentHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
-			Debug.WriteLine("CURRENT SCREEN WIDTH: " + currentWidth);
-			Debug.WriteLine("CURRENT SCREEN HEIGHT: " + currentHeight);
-			cbo_resolution.Items.Add(currentWidth + " x " + currentHeight);
-			// make array of resolutions and use current res as a cut off point for available choices
+
+			// create resolution combo box items
+			Debug.WriteLine("----------------------");
+			Debug.WriteLine("Supported Resolutions:");
+			Debug.WriteLine("----------------------");
+			bool inRange = false;
+			for (int x = 0; x <= resolutions.GetUpperBound(0); x++)
+			{
+				ComboBoxItem item = new ComboBoxItem();
+				if (resolutions[x, 0] == currentWidth && resolutions[x, 1] == currentHeight) // mark native resolution with an *
+				{					
+					item.Content = resolutions[x, 0] + " x " + resolutions[x, 1] + " *";
+					inRange = true;
+				}
+				else
+				{
+					item.Content = resolutions[x, 0] + " x " + resolutions[x, 1];
+				}
+				if (!inRange) // make resolutions above native resolution light pink
+				{
+					item.Background = Brushes.LightPink;
+				}
+				cbo_resolution.Items.Add(item);
+				Debug.WriteLine(item.Content);
+			}
+			Debug.WriteLine("----------------------");
 		}
 
 		private void loadSettings()																				// Update ui with current settings
 		{
 			// load settings
+			int height = 0;
+			int width = 0;
 			foreach (string s in configContents)
 			{
-				//Debug.WriteLine(s);
 				string[] setting = s.Split('=');
 				switch (setting[0])
 				{
 					case "Height":
-						// store height
+						height = Convert.ToInt32(setting[1]); // store height
 						break;
 					case "Width":
-						// use height & width to set resolution
+						width = Convert.ToInt32(setting[1]); // store width
+						int r = 0;
+						foreach (ComboBoxItem item in cbo_resolution.Items)
+						{
+							Debug.WriteLine(width + " x " + height);
+							if (item.Content.ToString().StartsWith(width + " x " + height))
+							{
+								Debug.WriteLine("---- found current res @ index " + r + "----");
+								break;
+							}
+							r++;
+						}
+						cbo_resolution.SelectedIndex = r;
 						break;
 					case "ColorPalette":
 						chk_colorblindMode.IsChecked = Convert.ToBoolean(Convert.ToInt32(setting[1]));
@@ -288,8 +368,9 @@ namespace LoL_Config
 		private void cbo_resolution_SelectionChanged(object sender, SelectionChangedEventArgs e)				// 'Resolution' changed
 		{
 			updateSettings("UserSetResolution", 1);
-			//updateSettings("Height", 1440);
-			//updateSettings("Width", 2560);
+			string[] res = ((ComboBoxItem)cbo_resolution.SelectedItem).Content.ToString().Trim(' ', '*').Split('x');
+			updateSettings("Width", Convert.ToInt32(res[0]));
+			updateSettings("Height", Convert.ToInt32(res[1]));
 		}
 
 		private void chk_colorblindMode_Click(object sender, RoutedEventArgs e)									// 'Colorblind Mode' changed
