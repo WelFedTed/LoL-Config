@@ -100,7 +100,8 @@
             </Grid>
         </GroupBox>
         <TextBox x:Name="txt_dump" HorizontalAlignment="Left" Height="590" Margin="375,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" BorderBrush="LightGray" Grid.ColumnSpan="2"/>
-        <Button x:Name="btn_save" Content="Save" HorizontalAlignment="Left" Margin="375,659,0,0" VerticalAlignment="Top" Width="250" Click="btn_save_Click" BorderBrush="LightGray" Background="LightGreen" Grid.ColumnSpan="2"/>
-        <Button x:Name="btn_restoreBackup" Content="Restore Backup" HorizontalAlignment="Left" Margin="375,20,0,0" VerticalAlignment="Top" Width="250" BorderBrush="LightGray" Background="LightPink" Click="btn_restoreBackup_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btn_save" Content="Save" HorizontalAlignment="Left" Margin="375,659,0,0" VerticalAlignment="Top" Width="250" Click="btn_save_Click" ToolTip="Commit and save settings" BorderBrush="LightGray" Background="LightGreen" Grid.ColumnSpan="2"/>
+        <Button x:Name="btn_restoreBackup" Content="Restore" HorizontalAlignment="Left" Margin="505,20,0,0" VerticalAlignment="Top" Width="120" ToolTip="Restore backed up settings" BorderBrush="LightGray" Background="LightCoral" Click="btn_restoreBackup_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btn_backup" Content="Backup" HorizontalAlignment="Left" Margin="375,20,0,0" BorderBrush="LightGray" Background="LightPink" ToolTip="Create a backup of current settings" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>
